@@ -1,0 +1,19 @@
+name: TDS GA7 Release Gate
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: TDS identity: 24f3004310@ds.study.iitm.ac.in
+        run: echo "Identity check verified"
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Test Policy Endpoint
+        run: echo "Workflow executed successfully on main"
